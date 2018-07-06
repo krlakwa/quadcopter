@@ -34,7 +34,7 @@ function createTransmitter() {
 
 function setTransmitters(transmitters) {
     const transmitterNumber = parseInt(prompt("Podaj liczbę nadajników"));
-
+    
     for (let i = 0; i < transmitterNumber; i++) {
         transmitters[i] = createTransmitter();
     }
@@ -71,11 +71,11 @@ function findCollisions(transmitters) {
 
 function searchPath(start, nodes, fn) {
     (function path_recur(node, visited) {
-        var adj = nodes[node];
+        let adj = nodes[node];
         visited.push(node);
         fn(node);
-        for (var i in adj) {
-            var node = adj[i];
+        for (let i in adj) {
+            let node = adj[i];
             if (0 >= visited.indexOf(node)) {
                 path_recur(node, visited);
             }
@@ -86,9 +86,9 @@ function searchPath(start, nodes, fn) {
 function isPath(arr) {
     let searchItem = collisions.length - 1;
     if (visited.indexOf(searchItem) !== -1) {
-        console.log('Bezpieczny przelot quadrocopterem jest możliwy')
+        console.log('Bezpieczny przelot jest możliwy')
     } else {
-        console.log('Bezpieczny przelot quadrocopterem nie jest możliwy')
+        console.log('Bezpieczny przelot nie jest możliwy')
     }
 }
 
